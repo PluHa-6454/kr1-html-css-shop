@@ -155,7 +155,7 @@ GitHub Pages: https://PluHa-6454.github.io/kr1-html-css-shop/
 - Flexbox для основного навигационного меню (`.site-nav__list`);
 - Flexbox для внутренней структуры карточек товаров (`.product-card`);
 - CSS Grid для сетки популярных товаров (`.products-grid`);
-- CSS Grid для двумерной структуры каталога с фильтрами (`.catalog-layout`).
+
 
 ## История выполнения
 - Практическая работа 1: создан Git-репозиторий, опубликован проект на GitHub Pages.
@@ -180,3 +180,4 @@ GitHub Pages: https://PluHa-6454.github.io/kr1-html-css-shop/
 - `order-form` — форма заявки;
 - `button` — переиспользуемый блок кнопки;
 - `site-footer` — подвал сайта.
+
