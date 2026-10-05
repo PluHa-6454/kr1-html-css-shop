@@ -1,52 +1,32 @@
-// Элементы модального окна и управления им
-const orderDialog = document.getElementById('order-dialog');
-const orderButtons = document.querySelectorAll('.product-card__button');
-const closeDialogButton = document.getElementById('close-order-dialog');
-const selectedProductInput = document.getElementById('selected-product');
+document.addEventListener('DOMContentLoaded', () => {
+  const dialog = document.getElementById('order-dialog');
+  const form = document.getElementById('order-form');
+  const productInput = document.getElementById('order-product');
+  const closeButton = document.getElementById('close-order-dialog');
 
-// Элементы формы и вывода уведомления
-const orderForm = document.getElementById('order-form');
-const successMessage = document.getElementById('success-message');
+  // Селектор по БЭМ-классу
+  const orderButtons = document.querySelectorAll('.product-card__button');
 
-// Открытие модального окна при клике на «Заказать»
-orderButtons.forEach((button) => {
-  button.addEventListener('click', () => {
-    const productName = button.dataset.product;
-    selectedProductInput.value = productName;
-    orderDialog.showModal();
-  });
-});
-
-// Закрытие модального окна по кнопке «Закрыть»
-closeDialogButton.addEventListener('click', () => {
-  orderDialog.close();
-});
-
-// Обработка отправки формы и валидация
-orderForm.addEventListener('submit', (event) => {
-  event.preventDefault();
-
-  // Сброс предыдущих ошибок
-  const formElements = Array.from(orderForm.elements);
-  formElements.forEach((element) => {
-    if (element.willValidate) {
-      element.removeAttribute('aria-invalid');
-    }
-  });
-
-  // Проверка встроенных HTML-ограничений
-  if (!orderForm.checkValidity()) {
-    formElements.forEach((element) => {
-      if (element.willValidate && !element.checkValidity()) {
-        element.setAttribute('aria-invalid', 'true');
-      }
+  orderButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const productName = button.getAttribute('data-product');
+      if (productInput) productInput.value = productName;
+      if (dialog) dialog.showModal();
     });
-    orderForm.reportValidity();
-    return;
+  });
+
+  if (closeButton) {
+    closeButton.addEventListener('click', () => {
+      if (dialog) dialog.close();
+    });
   }
 
-  // Действия при успешной валидации
-  successMessage.hidden = false;
-  orderForm.reset();
-  orderDialog.close();
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Заявка успешно отправлена!');
+      if (dialog) dialog.close();
+      form.reset();
+    });
+  }
 });
