@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Детальная карточка учебного товара.">
+  <title>Товар 1 — ShopProject</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__logo" href="index.html">ShopProject</a>
+      <nav class="site-nav" aria-label="Основная навигация">
+        <ul class="site-nav__list">
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
+          <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="catalog.html">Каталог</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <nav class="breadcrumbs" aria-label="Хлебные крошки">
+      <a class="breadcrumbs__link" href="index.html">Главная</a>
+      <a class="breadcrumbs__link" href="catalog.html">Каталог</a>
+      <span class="breadcrumbs__current">Товар 1</span>
+    </nav>
+
+    <section class="section">
+      <div class="section__inner">
+        <article class="product-card product-card--featured">
+          <span class="product-card__badge">Хит</span>
+          <h1 class="product-card__title">Товар 1 (Подробная карточка)</h1>
+          <p class="product-card__description">Полное описание учебного товара для проверки требований КР №1.</p>
+          <p class="product-card__price">Цена: 1000 руб.</p>
+          
+          <!-- Таблица характеристик (обязательное требование КР №1) -->
+          <table class="product-table" style="width:100%; border-collapse:collapse; margin: 20px 0;">
+            <caption>Характеристики товара</caption>
+            <thead>
+              <tr style="background-color: var(--color-surface);">
+                <th style="border: 1px solid var(--color-border); padding: 8px;">Параметр</th>
+                <th style="border: 1px solid var(--color-border); padding: 8px;">Значение</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="border: 1px solid var(--color-border); padding: 8px;">Категория</td>
+                <td style="border: 1px solid var(--color-border); padding: 8px;">Учебные материалы</td>
+              </tr>
+              <tr>
+                <td style="border: 1px solid var(--color-border); padding: 8px;">Наличие</td>
+                <td style="border: 1px solid var(--color-border); padding: 8px;">В наличии</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <a class="button button--primary" href="order.html">Перейти к оформлению</a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p class="site-footer__text">&copy; 2026 Учебный проект. Все права защищены.</p>
+    </div>
+  </footer>
+</body>
+</html>
