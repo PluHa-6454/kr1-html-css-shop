@@ -3,15 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Учебный интернет-магазин на HTML и CSS.">
-  <title>Учебный интернет-магазин — Главная</title>
+  <meta name="description" content="Кубики Рубика, спидкубины и аксессуары. Учебный интернет-магазин на HTML и CSS.">
+  <title>CubeMaster — магазин кубиков Рубика</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <!-- Шапка сайта -->
   <header class="site-header">
     <div class="site-header__inner">
-      <a class="site-header__logo" href="index.html">ShopProject</a>
+      <a class="site-header__logo" href="index.html">CubeMaster</a>
       <nav class="site-nav" aria-label="Основная навигация">
         <ul class="site-nav__list">
           <li class="site-nav__item">
@@ -21,10 +20,13 @@
             <a class="site-nav__link" href="catalog.html">Каталог</a>
           </li>
           <li class="site-nav__item">
-            <a class="site-nav__link" href="contacts.html">Контакты</a>
+            <a class="site-nav__link" href="index.html#about">О нас</a>
           </li>
           <li class="site-nav__item">
-            <a class="site-nav__link" href="index.html#popular">Популярные товары</a>
+            <a class="site-nav__link" href="index.html#advantages">Преимущества</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="contacts.html">Контакты</a>
           </li>
         </ul>
       </nav>
@@ -32,87 +34,158 @@
   </header>
 
   <main>
-    <!-- Главный баннер -->
     <section class="hero">
       <div class="hero__inner">
-        <h1 class="hero__title">Добро пожаловать в ShopProject</h1>
-        <p class="hero__subtitle">Лучшие товары по доступным ценам для вашего обучения.</p>
+        <h1 class="hero__title">Добро пожаловать в CubeMaster</h1>
+        <p class="hero__subtitle">Кубики Рубика и аксессуары для спидкубинга — для новичков и профессионалов.</p>
         <a class="button button--primary" href="catalog.html">Перейти в каталог</a>
       </div>
     </section>
 
-    <!-- Популярные товары -->
-    <section class="section" id="popular">
+    <section class="section" id="catalog">
       <div class="section__inner">
         <h2 class="section__title">Популярные товары</h2>
         <div class="products-grid">
-          
-          <!-- Карточка с переходами на детальную страницу товара и страницу заказа -->
-          <article class="product-card product-card--featured">
-            <h3 class="product-card__title">Товар 1</h3>
-            <p class="product-card__description">Краткое описание учебного товара.</p>
-            <p class="product-card__price">Цена: 1000 руб.</p>
-            <div class="product-card__actions" style="display: flex; gap: 10px; margin-top: 10px;">
-              <a class="button button--secondary" href="product.html">Подробнее</a>
-              <a class="button button--primary" href="order.html">Заказать</a>
+          <article class="product-card">
+            <div class="product-card__media">
+              <img class="product-card__img" src="https://igrrai.ru/image/catalog/Golovolomki/Kubik-Rubika%203x3/GAN%20356%20RS/IMG_0007.jpg" alt="Кубик 3×3 SpeedPro" width="400" height="300">
+              <span class="product-card__badge product-card__badge--hit">Хит</span>
+            </div>
+            <h3 class="product-card__title">Кубик 3×3 SpeedPro</h3>
+            <p class="product-card__description">Магнитный скорлуб для быстрой сборки.</p>
+            <p class="product-card__price">Цена: 1200 руб.</p>
+            <div class="product-card__actions">
+              <a class="button button--secondary" href="product.html?id=3x3">Подробнее</a>
+              <button class="button button--primary product-card__button" type="button" data-product="Кубик 3×3 SpeedPro">Заказать</button>
             </div>
           </article>
 
           <article class="product-card">
-            <h3 class="product-card__title">Товар 2</h3>
-            <p class="product-card__description">Краткое описание учебного товара.</p>
-            <p class="product-card__price">Цена: 1500 руб.</p>
-            <div class="product-card__actions" style="display: flex; gap: 10px; margin-top: 10px;">
-              <a class="button button--secondary" href="product.html">Подробнее</a>
-              <a class="button button--primary" href="order.html">Заказать</a>
+            <div class="product-card__media">
+              <img class="product-card__img" src="https://avatars.mds.yandex.net/get-mpic/5177817/img_id8714847814257320974.jpeg/orig" alt="Кубик 2×2 Mini" width="400" height="300">
+            </div>
+            <h3 class="product-card__title">Кубик 2×2 Mini</h3>
+            <p class="product-card__description">Компактный кубик для освоения базовых алгоритмов.</p>
+            <p class="product-card__price">Цена: 700 руб.</p>
+            <div class="product-card__actions">
+              <a class="button button--secondary" href="product.html?id=2x2">Подробнее</a>
+              <button class="button button--primary product-card__button" type="button" data-product="Кубик 2×2 Mini">Заказать</button>
             </div>
           </article>
 
           <article class="product-card product-card--discount">
-            <h3 class="product-card__title">Товар 3 (Скидка)</h3>
-            <p class="product-card__description">Краткое описание учебного товара со скидкой.</p>
-            <p class="product-card__price">Цена: 2000 руб.</p>
-            <div class="product-card__actions" style="display: flex; gap: 10px; margin-top: 10px;">
-              <a class="button button--secondary" href="product.html">Подробнее</a>
-              <a class="button button--primary" href="order.html">Заказать</a>
+            <div class="product-card__media">
+              <img class="product-card__img" src="https://avatars.mds.yandex.net/get-mpic/10229228/2a00000196cb249d3e2cf73827dd2a086e5d/orig" alt="Кубик 4×4 Master" width="400" height="300">
+              <span class="product-card__badge">−15%</span>
+            </div>
+            <h3 class="product-card__title">Кубик 4×4 Master</h3>
+            <p class="product-card__description">Следующий уровень после освоения 3×3.</p>
+            <p class="product-card__price">Цена: 2100 руб.</p>
+            <div class="product-card__actions">
+              <a class="button button--secondary" href="product.html?id=4x4">Подробнее</a>
+              <button class="button button--primary product-card__button" type="button" data-product="Кубик 4×4 Master">Заказать</button>
             </div>
           </article>
+        </div>
+        <p class="section__more">
+          <a class="button button--secondary" href="catalog.html">Смотреть весь каталог</a>
+        </p>
+      </div>
+    </section>
+    <section class="section section--alt" id="advantages">
+      <div class="section__inner">
+        <h2 class="section__title">Наши преимущества</h2>
+        <ul class="advantages">
+          <li class="advantages__item">
+            <h3 class="advantages__title">Низкие цены</h3>
+            <p class="advantages__text">Регулярные скидки на кубики и аксессуары.</p>
+          </li>
+          <li class="advantages__item">
+            <h3 class="advantages__title">Быстрая доставка</h3>
+            <p class="advantages__text">Отправляем заказы в течение одного рабочего дня.</p>
+          </li>
+          <li class="advantages__item">
+            <h3 class="advantages__title">Гарантия качества</h3>
+            <p class="advantages__text">Только оригинальные кубики от проверенных брендов.</p>
+          </li>
+          <li class="advantages__item">
+            <h3 class="advantages__title">Помощь с выбором</h3>
+            <p class="advantages__text">Подберём кубик под ваш уровень — от первых сборок до соревнований.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
 
+    <section class="section" id="about">
+      <div class="section__inner">
+        <h2 class="section__title">О нас</h2>
+        <div class="about-text">
+          <p>
+            CubeMaster — учебный проект интернет-магазина кубиков Рубика,
+            созданный в рамках дисциплины «Фронтенд и бэкенд разработка».
+            Мы помогаем новичкам сделать первый выбор, а спидкуберам —
+            найти кубик для тренировок и соревнований.
+          </p>
+          <p>
+            Честные цены, понятный каталог и быстрое оформление заказа —
+            всё, что нужно для покупки кубика.
+          </p>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- Модальное окно заявки (сохранено для JS-скрипта) -->
-  <dialog class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title">
-    <h2 class="order-dialog__title" id="order-dialog-title">Оформление заявки</h2>
-    <form class="order-form" id="order-form" action="#" method="post" novalidate>
-      <input type="hidden" id="order-product" name="product" value="">
-      
-      <div class="order-form__field">
-        <label class="order-form__label" for="order-name">Ваше имя</label>
-        <input class="order-form__input" id="order-name" name="name" type="text" required>
-      </div>
-
-      <div class="order-form__field">
-        <label class="order-form__label" for="order-email">E-mail</label>
-        <input class="order-form__input" id="order-email" name="email" type="email" required>
-      </div>
-
-      <div class="order-form__actions">
-        <button class="button button--secondary" type="button" id="close-order-dialog">Закрыть</button>
-        <button class="button button--primary" type="submit">Отправить заявку</button>
-      </div>
-    </form>
-  </dialog>
-
-  <!-- Подвал сайта -->
   <footer class="site-footer">
     <div class="site-footer__inner">
+      <nav class="site-footer__nav" aria-label="Служебная навигация">
+        <a class="site-footer__link" href="#about">О нас</a>
+        <a class="site-footer__link" href="#catalog">Каталог товаров</a>
+        <a class="site-footer__link" href="#advantages">Преимущества</a>
+        <a class="site-footer__link" href="contacts.html#contacts">Контакты</a>
+      </nav>
       <p class="site-footer__text">&copy; 2026 Учебный проект. Все права защищены.</p>
       <p class="site-footer__text">Дисциплина: Фронтенд и бэкенд разработка</p>
     </div>
   </footer>
+
+  <dialog class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title">
+    <form class="order-dialog__form" id="order-form" method="dialog">
+      <h2 class="order-dialog__title" id="order-dialog-title">Быстрый заказ</h2>
+      <p class="order-dialog__product">Товар: <span id="order-product">—</span></p>
+
+      <label class="form-field">
+        <span class="form-field__label">Имя</span>
+        <input class="form-field__input" id="order-name" name="name" type="text" placeholder="Иван Иванов" required>
+      </label>
+
+      <label class="form-field">
+        <span class="form-field__label">E-mail</span>
+        <input class="form-field__input" id="order-email" name="email" type="email" placeholder="example@mail.ru" required>
+      </label>
+
+      <label class="form-field">
+        <span class="form-field__label">Телефон</span>
+        <input class="form-field__input" id="order-phone" name="phone" type="tel" placeholder="+7 (999) 123-45-67" required>
+      </label>
+
+      <label class="form-field">
+        <span class="form-field__label">Комментарий</span>
+        <textarea class="form-field__textarea" id="order-comment" name="comment" rows="3" placeholder="Например: модель, цвет, способ доставки"></textarea>
+      </label>
+
+      <label class="form-checkbox">
+        <input class="form-checkbox__input" id="order-agree" name="agree" type="checkbox" required>
+        <span>Согласен на обработку персональных данных</span>
+      </label>
+
+      <input type="hidden" id="order-product-input" name="product" value="">
+
+      <div class="order-dialog__actions">
+        <button class="button button--primary" type="submit" value="order">Отправить</button>
+        <button class="button button--secondary" id="close-order-dialog" type="button">Отмена</button>
+      </div>
+    </form>
+  </dialog>
 
   <script src="js/main.js"></script>
 </body>

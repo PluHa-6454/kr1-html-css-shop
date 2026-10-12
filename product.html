@@ -3,18 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Детальная карточка учебного товара.">
-  <title>Товар 1 — ShopProject</title>
+  <meta name="description" content="Кубик 3×3 SpeedPro — магнитный скорлуб для спидкубинга.">
+  <title>Кубик 3×3 SpeedPro — CubeMaster</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <header class="site-header">
     <div class="site-header__inner">
-      <a class="site-header__logo" href="index.html">ShopProject</a>
+      <a class="site-header__logo" href="index.html">CubeMaster</a>
       <nav class="site-nav" aria-label="Основная навигация">
         <ul class="site-nav__list">
           <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
           <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="catalog.html">Каталог</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html#about">О нас</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html#advantages">Преимущества</a></li>
           <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
         </ul>
       </nav>
@@ -25,48 +27,120 @@
     <nav class="breadcrumbs" aria-label="Хлебные крошки">
       <a class="breadcrumbs__link" href="index.html">Главная</a>
       <a class="breadcrumbs__link" href="catalog.html">Каталог</a>
-      <span class="breadcrumbs__current">Товар 1</span>
+      <span class="breadcrumbs__current" id="product-breadcrumb">Кубик 3×3 SpeedPro</span>
     </nav>
 
     <section class="section">
       <div class="section__inner">
-        <article class="product-card product-card--featured">
-          <span class="product-card__badge">Хит</span>
-          <h1 class="product-card__title">Товар 1 (Подробная карточка)</h1>
-          <p class="product-card__description">Полное описание учебного товара для проверки требований КР №1.</p>
-          <p class="product-card__price">Цена: 1000 руб.</p>
-          
-          <!-- Таблица характеристик (обязательное требование КР №1) -->
-          <table class="product-table" style="width:100%; border-collapse:collapse; margin: 20px 0;">
-            <caption>Характеристики товара</caption>
-            <thead>
-              <tr style="background-color: var(--color-surface);">
-                <th style="border: 1px solid var(--color-border); padding: 8px;">Параметр</th>
-                <th style="border: 1px solid var(--color-border); padding: 8px;">Значение</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td style="border: 1px solid var(--color-border); padding: 8px;">Категория</td>
-                <td style="border: 1px solid var(--color-border); padding: 8px;">Учебные материалы</td>
-              </tr>
-              <tr>
-                <td style="border: 1px solid var(--color-border); padding: 8px;">Наличие</td>
-                <td style="border: 1px solid var(--color-border); padding: 8px;">В наличии</td>
-              </tr>
-            </tbody>
-          </table>
-
-          <a class="button button--primary" href="order.html">Перейти к оформлению</a>
+        <article class="product-detail">
+          <div class="product-detail__media">
+            <img class="product-detail__img" id="product-img" src="https://igrrai.ru/image/catalog/Golovolomki/Kubik-Rubika%203x3/GAN%20356%20RS/IMG_0007.jpg" alt="Кубик 3×3 SpeedPro" width="400" height="300">
+            <span class="product-detail__badge" id="product-badge">Хит</span>
+          </div>
+          <div class="product-detail__info">
+            <h1 class="product-detail__title" id="product-title">Кубик 3×3 SpeedPro</h1>
+            <p class="product-detail__description" id="product-description">Магнитный скорлуб 3×3 с плавным ходом из коробки. Подходит для новичков и соревнований: держит форму, не клинит и легко настраивается.</p>
+            <p class="product-detail__price" id="product-price">Цена: 1200 руб.</p>
+            <a class="button button--primary" href="order.html">Перейти к оформлению</a>
+          </div>
         </article>
+
+        <table class="product-table">
+          <caption>Характеристики товара</caption>
+          <thead>
+            <tr>
+              <th scope="col">Параметр</th>
+              <th scope="col">Значение</th>
+            </tr>
+          </thead>
+          <tbody id="product-specs">
+            <tr>
+              <th scope="row">Категория</th>
+              <td>Спидкубины, кубик 3×3</td>
+            </tr>
+            <tr>
+              <th scope="row">Материал</th>
+              <td>ABS-пластик</td>
+            </tr>
+            <tr>
+              <th scope="row">Магниты</th>
+              <td>Есть</td>
+            </tr>
+            <tr>
+              <th scope="row">Размер</th>
+              <td>56 мм</td>
+            </tr>
+            <tr>
+              <th scope="row">Гарантия</th>
+              <td>12 месяцев</td>
+            </tr>
+            <tr>
+              <th scope="row">Наличие</th>
+              <td>В наличии</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table class="compare-table">
+          <caption>Сравнение кубиков</caption>
+          <thead>
+            <tr>
+              <th scope="col">Характеристика</th>
+              <th scope="col">Кубик 2×2</th>
+              <th scope="col">Кубик 3×3</th>
+              <th scope="col">Кубик 4×4</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Модель</th>
+              <td>Mini</td>
+              <td>SpeedPro</td>
+              <td>Master</td>
+            </tr>
+            <tr>
+              <th scope="row">Магниты</th>
+              <td>—</td>
+              <td>✓</td>
+              <td>✓</td>
+            </tr>
+            <tr>
+              <th scope="row">Вес</th>
+              <td>60 г</td>
+              <td>85 г</td>
+              <td>130 г</td>
+            </tr>
+            <tr>
+              <th scope="row">Гарантия</th>
+              <td>6 мес.</td>
+              <td>12 мес.</td>
+              <td>12 мес.</td>
+            </tr>
+            <tr>
+              <th scope="row">Цена</th>
+              <td>700 руб.</td>
+              <td>1200 руб.</td>
+              <td>2100 руб.</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="site-footer__inner">
+      <nav class="site-footer__nav" aria-label="Служебная навигация">
+        <a class="site-footer__link" href="index.html#about">О нас</a>
+        <a class="site-footer__link" href="index.html#catalog">Каталог товаров</a>
+        <a class="site-footer__link" href="index.html#advantages">Преимущества</a>
+        <a class="site-footer__link" href="contacts.html#contacts">Контакты</a>
+      </nav>
       <p class="site-footer__text">&copy; 2026 Учебный проект. Все права защищены.</p>
+      <p class="site-footer__text">Дисциплина: Фронтенд и бэкенд разработка</p>
     </div>
   </footer>
+
+  <script src="js/product.js"></script>
 </body>
 </html>
