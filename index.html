@@ -3,190 +3,216 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Кубики Рубика, спидкубины и аксессуары. Учебный интернет-магазин на HTML и CSS.">
+  <meta name="description" content="Кубики Рубика, спидкубины и аксессуары. Учебный интернет-магазин на Bootstrap.">
   <title>CubeMaster — магазин кубиков Рубика</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/custom.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="site-header__inner">
-      <a class="site-header__logo" href="index.html">CubeMaster</a>
-      <nav class="site-nav" aria-label="Основная навигация">
-        <ul class="site-nav__list">
-          <li class="site-nav__item">
-            <a class="site-nav__link site-nav__link--active" href="index.html">Главная</a>
-          </li>
-          <li class="site-nav__item">
-            <a class="site-nav__link" href="catalog.html">Каталог</a>
-          </li>
-          <li class="site-nav__item">
-            <a class="site-nav__link" href="index.html#about">О нас</a>
-          </li>
-          <li class="site-nav__item">
-            <a class="site-nav__link" href="index.html#advantages">Преимущества</a>
-          </li>
-          <li class="site-nav__item">
-            <a class="site-nav__link" href="contacts.html">Контакты</a>
-          </li>
+  <!-- Навигация Bootstrap navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold fs-4 text-dark text-decoration-none" href="index.html">CubeMaster</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Переключить навигацию">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Главная</a></li>
+          <li class="nav-item"><a class="nav-link" href="catalog.html">Каталог</a></li>
+          <li class="nav-item"><a class="nav-link" href="product.html">Товар</a></li>
+          <li class="nav-item"><a class="nav-link" href="order.html">Заказ</a></li>
         </ul>
-      </nav>
+      </div>
     </div>
-  </header>
+  </nav>
 
-  <main>
-    <section class="hero">
-      <div class="hero__inner">
-        <h1 class="hero__title">Добро пожаловать в CubeMaster</h1>
-        <p class="hero__subtitle">Кубики Рубика и аксессуары для спидкубинга — для новичков и профессионалов.</p>
-        <a class="button button--primary" href="catalog.html">Перейти в каталог</a>
-      </div>
-    </section>
-
-    <section class="section" id="catalog">
-      <div class="section__inner">
-        <h2 class="section__title">Популярные товары</h2>
-        <div class="products-grid">
-          <article class="product-card">
-            <div class="product-card__media">
-              <img class="product-card__img" src="https://igrrai.ru/image/catalog/Golovolomki/Kubik-Rubika%203x3/GAN%20356%20RS/IMG_0007.jpg" alt="Кубик 3×3 SpeedPro" width="400" height="300">
-              <span class="product-card__badge product-card__badge--hit">Хит</span>
+  <main class="container py-5">
+    <!-- Карусель главной страницы (Bootstrap Carousel) -->
+    <section class="mb-5">
+      <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://igrrai.ru/image/catalog/Golovolomki/Kubik-Rubika%203x3/GAN%20356%20RS/IMG_0007.jpg" class="d-block w-100" alt="Кубик 3×3 SpeedPro" style="height: 500px; object-fit: cover;">
+            <div class="carousel-caption d-none d-md-block text-start">
+              <div class="container">
+                <h1 class="display-5 fw-bold mb-3">Добро пожаловать в CubeMaster</h1>
+                <p class="lead mb-4">Кубики Рубика и аксессуары для спидкубинга — для новичков и профессионалов.</p>
+                <a class="btn btn-light btn-lg" href="catalog.html">Перейти в каталог</a>
+              </div>
             </div>
-            <h3 class="product-card__title">Кубик 3×3 SpeedPro</h3>
-            <p class="product-card__description">Магнитный скорлуб для быстрой сборки.</p>
-            <p class="product-card__price">Цена: 1200 руб.</p>
-            <div class="product-card__actions">
-              <a class="button button--secondary" href="product.html?id=3x3">Подробнее</a>
-              <button class="button button--primary product-card__button" type="button" data-product="Кубик 3×3 SpeedPro">Заказать</button>
+          </div>
+          <div class="carousel-item">
+            <img src="https://avatars.mds.yandex.net/get-mpic/5177817/img_id8714847814257320974.jpeg/orig" class="d-block w-100" alt="Кубик 2×2 Mini" style="height: 500px; object-fit: cover;">
+            <div class="carousel-caption d-none d-md-block text-start">
+              <div class="container">
+                <h5 class="fw-bold">Кубик 2×2 Mini</h5>
+                <p class="lead">Компактный кубик для освоения базовых алгоритмов — 700 руб.</p>
+                <a class="btn btn-primary" href="catalog.html">В каталог</a>
+              </div>
             </div>
-          </article>
-
-          <article class="product-card">
-            <div class="product-card__media">
-              <img class="product-card__img" src="https://avatars.mds.yandex.net/get-mpic/5177817/img_id8714847814257320974.jpeg/orig" alt="Кубик 2×2 Mini" width="400" height="300">
+          </div>
+          <div class="carousel-item">
+            <img src="https://avatars.mds.yandex.net/get-mpic/14832725/2a0000019704a5049ac4ca5ef61a9739e6ff/orig" class="d-block w-100" alt="Набор спидкубера" style="height: 500px; object-fit: cover;">
+            <div class="carousel-caption d-none d-md-block text-start">
+              <div class="container">
+                <h5 class="fw-bold">Набор спидкубера</h5>
+                <p class="lead">Смазка, таймер и мешочек для кубика — 1800 руб.</p>
+                <a class="btn btn-primary" href="catalog.html">В каталог</a>
+              </div>
             </div>
-            <h3 class="product-card__title">Кубик 2×2 Mini</h3>
-            <p class="product-card__description">Компактный кубик для освоения базовых алгоритмов.</p>
-            <p class="product-card__price">Цена: 700 руб.</p>
-            <div class="product-card__actions">
-              <a class="button button--secondary" href="product.html?id=2x2">Подробнее</a>
-              <button class="button button--primary product-card__button" type="button" data-product="Кубик 2×2 Mini">Заказать</button>
-            </div>
-          </article>
-
-          <article class="product-card product-card--discount">
-            <div class="product-card__media">
-              <img class="product-card__img" src="https://avatars.mds.yandex.net/get-mpic/10229228/2a00000196cb249d3e2cf73827dd2a086e5d/orig" alt="Кубик 4×4 Master" width="400" height="300">
-              <span class="product-card__badge">−15%</span>
-            </div>
-            <h3 class="product-card__title">Кубик 4×4 Master</h3>
-            <p class="product-card__description">Следующий уровень после освоения 3×3.</p>
-            <p class="product-card__price">Цена: 2100 руб.</p>
-            <div class="product-card__actions">
-              <a class="button button--secondary" href="product.html?id=4x4">Подробнее</a>
-              <button class="button button--primary product-card__button" type="button" data-product="Кубик 4×4 Master">Заказать</button>
-            </div>
-          </article>
+          </div>
         </div>
-        <p class="section__more">
-          <a class="button button--secondary" href="catalog.html">Смотреть весь каталог</a>
-        </p>
-      </div>
-    </section>
-    <section class="section section--alt" id="advantages">
-      <div class="section__inner">
-        <h2 class="section__title">Наши преимущества</h2>
-        <ul class="advantages">
-          <li class="advantages__item">
-            <h3 class="advantages__title">Низкие цены</h3>
-            <p class="advantages__text">Регулярные скидки на кубики и аксессуары.</p>
-          </li>
-          <li class="advantages__item">
-            <h3 class="advantages__title">Быстрая доставка</h3>
-            <p class="advantages__text">Отправляем заказы в течение одного рабочего дня.</p>
-          </li>
-          <li class="advantages__item">
-            <h3 class="advantages__title">Гарантия качества</h3>
-            <p class="advantages__text">Только оригинальные кубики от проверенных брендов.</p>
-          </li>
-          <li class="advantages__item">
-            <h3 class="advantages__title">Помощь с выбором</h3>
-            <p class="advantages__text">Подберём кубик под ваш уровень — от первых сборок до соревнований.</p>
-          </li>
-        </ul>
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Предыдущий</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Следующий</span>
+        </button>
       </div>
     </section>
 
-    <section class="section" id="about">
-      <div class="section__inner">
-        <h2 class="section__title">О нас</h2>
-        <div class="about-text">
-          <p>
-            CubeMaster — учебный проект интернет-магазина кубиков Рубика,
-            созданный в рамках дисциплины «Фронтенд и бэкенд разработка».
-            Мы помогаем новичкам сделать первый выбор, а спидкуберам —
-            найти кубик для тренировок и соревнований.
-          </p>
-          <p>
-            Честные цены, понятный каталог и быстрое оформление заказа —
-            всё, что нужно для покупки кубика.
-          </p>
+    <section class="mb-5">
+      <h2 class="text-center mb-4">Наши преимущества</h2>
+      <div class="row g-4">
+        <div class="col-12 col-md-4">
+          <div class="card h-100 shadow-sm border-0">
+            <div class="card-body text-center">
+              <h5 class="card-title">Быстрая доставка</h5>
+              <p class="card-text text-muted">Доставим заказ в течение 1–3 дней по всей России.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="card h-100 shadow-sm border-0">
+            <div class="card-body text-center">
+              <h5 class="card-title">Гарантия качества</h5>
+              <p class="card-text text-muted">Все кубики сертифицированы и имеют гарантию 12 месяцев.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="card h-100 shadow-sm border-0">
+            <div class="card-body text-center">
+              <h5 class="card-title">Помощь с выбором</h5>
+              <p class="card-text text-muted">Подберём кубик под ваш уровень — от первых сборок до соревнований.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="text-center mb-4">Популярные товары</h2>
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm position-relative">
+            <img src="https://igrrai.ru/image/catalog/Golovolomki/Kubik-Rubika%203x3/GAN%20356%20RS/IMG_0007.jpg" alt="Кубик 3×3 SpeedPro" class="card-img-top product-card-img">
+            <span class="badge bg-danger product-badge">Хит</span>
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Кубик 3×3 SpeedPro</h5>
+              <p class="card-text flex-grow-1">Магнитный скорлуб для быстрой сборки.</p>
+              <p class="fw-bold mb-3">1200 руб.</p>
+              <div class="d-grid gap-2">
+                <a class="btn btn-outline-primary" href="product.html">Подробнее</a>
+                <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#orderModal">Заказать</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm position-relative">
+            <img src="https://avatars.mds.yandex.net/get-mpic/5177817/img_id8714847814257320974.jpeg/orig" alt="Кубик 2×2 Mini" class="card-img-top product-card-img">
+            <span class="badge bg-info product-badge">Новинка</span>
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Кубик 2×2 Mini</h5>
+              <p class="card-text flex-grow-1">Компактный кубик для освоения базовых алгоритмов.</p>
+              <p class="fw-bold mb-3">700 руб.</p>
+              <div class="d-grid gap-2">
+                <a class="btn btn-outline-primary" href="product.html">Подробнее</a>
+                <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#orderModal">Заказать</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm position-relative">
+            <img src="https://avatars.mds.yandex.net/get-mpic/14832725/2a0000019704a5049ac4ca5ef61a9739e6ff/orig" alt="Набор спидкубера" class="card-img-top product-card-img">
+            <span class="badge bg-warning product-badge">Скидка</span>
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Набор спидкубера</h5>
+              <p class="card-text flex-grow-1">Смазка, таймер и мешочек для кубика.</p>
+              <p class="fw-bold mb-3">1800 руб.</p>
+              <div class="d-grid gap-2">
+                <a class="btn btn-outline-primary" href="product.html">Подробнее</a>
+                <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#orderModal">Заказать</button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="site-footer__inner">
-      <nav class="site-footer__nav" aria-label="Служебная навигация">
-        <a class="site-footer__link" href="#about">О нас</a>
-        <a class="site-footer__link" href="#catalog">Каталог товаров</a>
-        <a class="site-footer__link" href="#advantages">Преимущества</a>
-        <a class="site-footer__link" href="contacts.html#contacts">Контакты</a>
-      </nav>
-      <p class="site-footer__text">&copy; 2026 Учебный проект. Все права защищены.</p>
-      <p class="site-footer__text">Дисциплина: Фронтенд и бэкенд разработка</p>
+  <footer class="bg-dark text-white py-4 mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <nav class="d-flex flex-wrap justify-content-center gap-3">
+            <a class="text-white text-decoration-none" href="index.html">Главная</a>
+            <a class="text-white text-decoration-none" href="catalog.html">Каталог</a>
+            <a class="text-white text-decoration-none" href="product.html">Товар</a>
+          </nav>
+        </div>
+        <div class="col-12 col-md-6 text-end">
+          <p class="mb-1">&copy; 2026 Учебный проект. Все права защищены.</p>
+          <p class="mb-0 small">Дисциплина: Фронтенд и бэкенд разработка</p>
+        </div>
+      </div>
     </div>
   </footer>
 
-  <dialog class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title">
-    <form class="order-dialog__form" id="order-form" method="dialog">
-      <h2 class="order-dialog__title" id="order-dialog-title">Быстрый заказ</h2>
-      <p class="order-dialog__product">Товар: <span id="order-product">—</span></p>
-
-      <label class="form-field">
-        <span class="form-field__label">Имя</span>
-        <input class="form-field__input" id="order-name" name="name" type="text" placeholder="Иван Иванов" required>
-      </label>
-
-      <label class="form-field">
-        <span class="form-field__label">E-mail</span>
-        <input class="form-field__input" id="order-email" name="email" type="email" placeholder="example@mail.ru" required>
-      </label>
-
-      <label class="form-field">
-        <span class="form-field__label">Телефон</span>
-        <input class="form-field__input" id="order-phone" name="phone" type="tel" placeholder="+7 (999) 123-45-67" required>
-      </label>
-
-      <label class="form-field">
-        <span class="form-field__label">Комментарий</span>
-        <textarea class="form-field__textarea" id="order-comment" name="comment" rows="3" placeholder="Например: модель, цвет, способ доставки"></textarea>
-      </label>
-
-      <label class="form-checkbox">
-        <input class="form-checkbox__input" id="order-agree" name="agree" type="checkbox" required>
-        <span>Согласен на обработку персональных данных</span>
-      </label>
-
-      <input type="hidden" id="order-product-input" name="product" value="">
-
-      <div class="order-dialog__actions">
-        <button class="button button--primary" type="submit" value="order">Отправить</button>
-        <button class="button button--secondary" id="close-order-dialog" type="button">Отмена</button>
+  <div class="modal fade" id="orderModal" tabindex="-1" aria-labelledby="orderModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title fw-bold" id="orderModalLabel">Быстрый заказ</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+        </div>
+        <div class="modal-body">
+          <form id="quick-order-form">
+            <p class="small text-muted mb-3">Товар: <span id="modal-product">—</span></p>
+            <div class="mb-3">
+              <label class="form-label">Имя</label>
+              <input type="text" class="form-control" placeholder="Иван Иванов" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">E-mail</label>
+              <input type="email" class="form-control" placeholder="example@mail.ru" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Телефон</label>
+              <div class="input-group has-validation">
+                <span class="input-group-text">+7</span>
+                <input type="tel" class="form-control" placeholder="(999) 123-45-67" required>
+              </div>
+            </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="agreeTerms" required>
+              <label class="form-check-label" for="agreeTerms">Согласен на обработку персональных данных</label>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
+          <button type="button" class="btn btn-primary" form="quick-order-form">Отправить заявку</button>
+        </div>
       </div>
-    </form>
-  </dialog>
+    </div>
+  </div>
 
-  <script src="js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

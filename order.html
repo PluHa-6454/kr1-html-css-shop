@@ -5,80 +5,120 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Оформление заявки на покупку кубика Рубика.">
   <title>Оформление заказа — CubeMaster</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/custom.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="site-header__inner">
-      <a class="site-header__logo" href="index.html">CubeMaster</a>
-      <nav class="site-nav" aria-label="Основная навигация">
-        <ul class="site-nav__list">
-          <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
-          <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="catalog.html">Каталог</a></li>
-          <li class="site-nav__item"><a class="site-nav__link" href="index.html#about">О нас</a></li>
-          <li class="site-nav__item"><a class="site-nav__link" href="index.html#advantages">Преимущества</a></li>
-          <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
+  <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold fs-4 text-dark text-decoration-none" href="index.html">CubeMaster</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Переключить навигацию">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
+          <li class="nav-item"><a class="nav-link" href="catalog.html">Каталог</a></li>
+          <li class="nav-item"><a class="nav-link" href="product.html">Товар</a></li>
+          <li class="nav-item"><a class="nav-link active" href="order.html">Заказ</a></li>
         </ul>
-      </nav>
+      </div>
     </div>
-  </header>
+  </nav>
 
-  <main>
-    <nav class="breadcrumbs" aria-label="Хлебные крошки">
-      <a class="breadcrumbs__link" href="index.html">Главная</a>
-      <span class="breadcrumbs__current">Оформление заказа</span>
+  <main class="container py-5">
+    <nav aria-label="Хлебные крошки">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
+        <li class="breadcrumb-item active">Оформление заказа</li>
+      </ol>
     </nav>
 
-    <section class="section">
-      <div class="section__inner">
-        <h1 class="section__title">Оформление заявки</h1>
-        <form class="order-form" action="#" method="post">
-          <fieldset class="order-form__fieldset">
-            <legend class="order-form__legend">Данные покупателя</legend>
-            <div class="order-form__field">
-              <label class="order-form__label" for="order-name">Ваше имя</label>
-              <input class="order-form__input" id="order-name" name="name" type="text" required>
-            </div>
-            <div class="order-form__field">
-              <label class="order-form__label" for="order-email">E-mail</label>
-              <input class="order-form__input" id="order-email" name="email" type="email" required>
-            </div>
-            <div class="order-form__field">
-              <label class="order-form__label" for="order-phone">Телефон</label>
-              <input class="order-form__input" id="order-phone" name="phone" type="tel" required>
-            </div>
-          </fieldset>
+    <div class="row g-3 justify-content-center">
+      <div class="col-12 col-md-6 col-lg-5">
+        <div class="card shadow-sm">
+          <div class="card-body p-4">
+            <h1 class="h3 mb-4">Оформление заявки</h1>
+            <form id="orderForm" novalidate>
+              <fieldset class="mb-4 border p-3 rounded-3">
+                <legend class="w-auto fw-bold">Данные покупателя</legend>
+                <div class="row g-3">
+                  <div class="col-12 col-md-6">
+                    <label class="form-label">Ваше имя</label>
+                    <input type="text" class="form-control" id="order-name" name="name" placeholder="Иван Иванов" required>
+                    <div class="invalid-feedback">Пожалуйста, введите ваше имя.</div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <label class="form-label">E-mail</label>
+                    <input type="email" class="form-control" id="order-email" name="email" placeholder="example@mail.ru" required>
+                    <div class="invalid-feedback">Пожалуйста, введите корректный e-mail.</div>
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label">Телефон</label>
+                    <div class="input-group has-validation">
+                      <span class="input-group-text">+7</span>
+                      <input type="tel" class="form-control" id="order-phone" name="phone" placeholder="(999) 123-45-67" required>
+                    </div>
+                    <div class="invalid-feedback">Пожалуйста, введите номер телефона.</div>
+                  </div>
+                </div>
+              </fieldset>
 
-          <fieldset class="order-form__fieldset">
-            <legend class="order-form__legend">Комментарий к заказу</legend>
-            <div class="order-form__field">
-              <label class="order-form__label" for="order-comment">Сообщение</label>
-              <textarea class="order-form__input order-form__textarea" id="order-comment" name="comment" rows="4" placeholder="Например: модель кубика, цвет, способ доставки"></textarea>
-            </div>
-          </fieldset>
+              <fieldset class="mb-4 border p-3 rounded-3">
+                <legend class="w-auto fw-bold">Комментарий к заказу</legend>
+                <div class="mb-3">
+                  <label class="form-label">Сообщение</label>
+                  <textarea class="form-control" id="order-comment" name="comment" rows="4" placeholder="Например: модель кубика, цвет, способ доставки"></textarea>
+                </div>
+              </fieldset>
 
-          <label class="order-form__checkbox">
-            <input type="checkbox" name="agree" required>
-            Согласен на обработку персональных данных
-          </label>
+              <div class="mb-4 form-check">
+                <input type="checkbox" class="form-check-input" id="order-agree" name="agree" required>
+                <label class="form-check-label" for="order-agree">Согласен на обработку персональных данных</label>
+                <div class="invalid-feedback">Необходимо дать согласие на обработку персональных данных.</div>
+              </div>
 
-          <button class="button button--primary" type="submit">Подтвердить заказ</button>
-        </form>
+              <button class="btn btn-primary w-100 py-2" type="submit">Подтвердить заказ</button>
+            </form>
+          </div>
+        </div>
       </div>
-    </section>
+    </div>
   </main>
 
-  <footer class="site-footer">
-    <div class="site-footer__inner">
-      <nav class="site-footer__nav" aria-label="Служебная навигация">
-        <a class="site-footer__link" href="index.html#about">О нас</a>
-        <a class="site-footer__link" href="index.html#catalog">Каталог товаров</a>
-        <a class="site-footer__link" href="index.html#advantages">Преимущества</a>
-        <a class="site-footer__link" href="contacts.html#contacts">Контакты</a>
-      </nav>
-      <p class="site-footer__text">&copy; 2026 Учебный проект. Все права защищены.</p>
-      <p class="site-footer__text">Дисциплина: Фронтенд и бэкенд разработка</p>
+  <footer class="bg-dark text-white py-4 mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <nav class="d-flex flex-wrap justify-content-center gap-3">
+            <a class="text-white text-decoration-none" href="index.html">Главная</a>
+            <a class="text-white text-decoration-none" href="catalog.html">Каталог</a>
+            <a class="text-white text-decoration-none" href="product.html">Товар</a>
+          </nav>
+        </div>
+        <div class="col-12 col-md-6 text-end">
+          <p class="mb-1">&copy; 2026 Учебный проект. Все права защищены.</p>
+          <p class="mb-0 small">Дисциплина: Фронтенд и бэкенд разработка</p>
+        </div>
+      </div>
     </div>
   </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    (function () {
+      'use strict'
+      var forms = document.querySelectorAll('.needs-validation, #orderForm')
+      Array.prototype.slice.call(forms).forEach(function (form) {
+        form.addEventListener('submit', function (event) {
+          if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+          }
+          form.classList.add('was-validated')
+        }, false)
+      })
+    })()
+  </script>
 </body>
 </html>
